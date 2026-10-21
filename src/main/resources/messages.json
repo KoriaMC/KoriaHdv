@@ -1,0 +1,303 @@
+{
+  "prefix": "&8[&6HDV&8] &r",
+  "general": {
+    "no-permission": "{prefix}&cVous n'avez pas la permission.",
+    "players-only": "{prefix}&cCette commande est réservée aux joueurs.",
+    "unknown-command": "{prefix}&cCommande inconnue. Faites &f/{label} help&c.",
+    "usage": "{prefix}&cUsage : &f/{label} {command} {usage}",
+    "error": "{prefix}&cUne erreur est survenue, prévenez un administrateur.",
+    "invalid-number": "{prefix}&c« {input} » n'est pas un nombre valide.",
+    "reload-done": "{prefix}&aConfiguration rechargée ({ventes} vente(s) en cours).",
+    "reload-problems": "{prefix}&c{count} problème(s) détecté(s) :",
+    "reload-problem": "&8- &c{problem}"
+  },
+  "help": {
+    "header": [
+      "&6&m-------&r &eHôtel des ventes &6&m-------",
+      "&7Taxe : &f{taxe_dollars}% &7en dollars (payée à la mise en vente), &f{taxe_points}% &7en points (retenue à la vente)."
+    ],
+    "line": "&e/{label} {command} &7{usage} &8- &f{description}",
+    "footer": "&6&m-----------------------------",
+    "commands": {
+      "help": {
+        "usage": "",
+        "description": "Affiche cette aide."
+      },
+      "menu": {
+        "usage": "",
+        "description": "Ouvre l'hôtel des ventes."
+      },
+      "view": {
+        "usage": "<all|money|points|mine|claims|history> [page]",
+        "description": "Onglet de l'hôtel des ventes."
+      },
+      "search": {
+        "usage": "[text]",
+        "description": "Recherche un objet (nom ou vendeur) dans l'hôtel des ventes."
+      },
+      "back": {
+        "usage": "",
+        "description": "Retour au menu (bouton de l'écran d'achat)."
+      },
+      "sell": {
+        "usage": "",
+        "description": "Ouvre l'écran de vente de l'objet en main (prix en dollars et/ou en points)."
+      },
+      "buy": {
+        "usage": "<id> [money|points]",
+        "description": "Achète une vente."
+      },
+      "cancel": {
+        "usage": "<id>",
+        "description": "Retire une de vos ventes (objet à récupérer)."
+      },
+      "claim": {
+        "usage": "[id|all]",
+        "description": "Récupère vos objets retirés ou expirés."
+      },
+      "config": {
+        "usage": "[file]",
+        "description": "Éditeur de configuration en jeu."
+      },
+      "reload": {
+        "usage": "",
+        "description": "Recharge la configuration."
+      }
+    }
+  },
+  "sell": {
+    "empty-hand": "{prefix}&cTenez en main l'objet à vendre.",
+    "forbidden": "{prefix}&cCet objet ne peut pas être vendu à l'hôtel des ventes.",
+    "not-enough": "{prefix}&cVous n'avez que &f{quantite} &cexemplaire(s) en main.",
+    "price-range": "{prefix}&cLe prix doit être compris entre &f{min} &cet &f{max}&c.",
+    "limit": "{prefix}&cVous avez déjà &f{max} &cvente(s) en cours, le maximum.",
+    "tax-too-poor": "{prefix}&cIl vous faut &f{taxe} &cpour payer la taxe de mise en vente.",
+    "listed-money": [
+      "{prefix}&a{objet} &fx{quantite} &amis en vente pour &f{prix}&a.",
+      "{prefix}&7Taxe de {pourcent}% payée : &c-{taxe}"
+    ],
+    "listed-points": [
+      "{prefix}&a{objet} &fx{quantite} &amis en vente pour &f{prix}&a.",
+      "{prefix}&7Taxe de {pourcent}% retenue à la vente : vous recevrez &f{net}&7."
+    ],
+    "no-price": "{prefix}&cIndiquez un prix en dollars, en points boutique, ou les deux.",
+    "listed": "{prefix}&a{objet} &fx{quantite} &amis en vente pour &f{prix}&a.",
+    "tax-money": "{prefix}&7Taxe de {pourcent}% sur le prix en dollars payée : &c-{taxe}",
+    "tax-points": "{prefix}&7Si payé en points : taxe de {pourcent}% retenue, vous recevrez &f{net}&7.",
+    "client-required": "{prefix}&cLa vente se fait depuis l'écran de vente du client KoriaMC."
+  },
+  "market": {
+    "currency-unavailable": "{prefix}&cLes ventes en {monnaie} &csont indisponibles pour le moment.",
+    "read-only": "{prefix}&cL'hôtel des ventes est en maintenance, réessayez plus tard.",
+    "payment-failed": "{prefix}&cLe paiement a échoué.",
+    "broken-item": "{prefix}&cCet objet est illisible, prévenez un administrateur."
+  },
+  "buy": {
+    "gone": "{prefix}&cCette vente n'existe plus.",
+    "own": "{prefix}&cVous ne pouvez pas acheter votre propre vente.",
+    "no-space": "{prefix}&cLibérez de la place dans votre inventaire.",
+    "too-poor": "{prefix}&cIl vous faut &f{prix} &cpour acheter cet objet.",
+    "done": "{prefix}&aVous avez acheté &f{objet} x{quantite} &apour &f{prix} &aà &f{vendeur}&a.",
+    "confirm": "{prefix}&eAcheter &f{objet} x{quantite} &epour &f{prix} &e(vendeur : {vendeur}) ? &a&l[Cliquez pour confirmer]",
+    "choose": "{prefix}&cChoisissez la monnaie : cliquez sur le prix en dollars ou en points.",
+    "wrong-currency": "{prefix}&cCette vente ne se paie pas en {monnaie}&c.",
+    "choose-header": "{prefix}&eAcheter &f{objet} x{quantite} &e(vendeur : {vendeur}) pour :",
+    "choose-button-money": "&6&l[{prix}]",
+    "choose-button-points": "&b&l[{prix}]"
+  },
+  "sold": {
+    "notice-money": "{prefix}&a{acheteur} &7a acheté &f{objet} x{quantite} &7pour &f{prix}&7 : &a+{net}",
+    "notice-points": "{prefix}&a{acheteur} &7a acheté &f{objet} x{quantite} &7pour &f{prix}&7 : &a+{net} &8(taxe {taxe})",
+    "pending-paid": "{prefix}&aGains de vos ventes versés : &f+{net}",
+    "offline-header": "{prefix}&eVentes faites pendant votre absence ({nombre}) :"
+  },
+  "cancel": {
+    "not-found": "{prefix}&cAucune vente n°&f{id}&c.",
+    "not-yours": "{prefix}&cCe n'est pas votre vente.",
+    "done": "{prefix}&aVente retirée : &f{objet} &aest à récupérer avec &f/{label} claim&a.",
+    "done-admin": "{prefix}&aVente de &f{vendeur} &aretirée (&f{objet}&a), l'objet lui est rendu.",
+    "removed-by-admin": "{prefix}&cUn administrateur a retiré votre vente &f{objet}&c. Récupérez-la avec &f/{label} claim&c.",
+    "tax-refunded": "{prefix}&aTaxe de mise en vente remboursée : &f+{taxe}"
+  },
+  "claim": {
+    "nothing": "{prefix}&7Vous n'avez aucun objet à récupérer.",
+    "done": "{prefix}&a{nombre} objet(s) récupéré(s).",
+    "not-found": "{prefix}&cAucun objet n°&f{id} &cà récupérer.",
+    "no-space": "{prefix}&cInventaire plein : libérez de la place pour récupérer la suite.",
+    "reminder": "{prefix}&eVous avez &f{nombre} &eobjet(s) à récupérer à l'hôtel des ventes : &f/{label} claim"
+  },
+  "expired": {
+    "notice": "{prefix}&7Votre vente &f{objet} &7a expiré : récupérez-la avec &f/{label} claim&7."
+  },
+  "menu": {
+    "confirm-buy": "Acheter {objet} x{quantite} pour {prix} ?",
+    "tooltip-name": "&f{objet} &7x{quantite}",
+    "tooltip-price": "&7Prix : &f{prix}",
+    "tooltip-seller": "&7Vendeur : &f{vendeur}",
+    "tooltip-time": "&7Expire dans : &f{temps}",
+    "tooltip-acheter": "&eClic : acheter",
+    "tooltip-retirer": "&cClic : retirer la vente",
+    "tooltip-recuperer": "&aClic : récupérer dans l'inventaire",
+    "tab-all": "Toutes",
+    "tab-money": "Dollars",
+    "tab-points": "Points",
+    "tab-mine": "Mes ventes",
+    "tab-claims": "À récupérer",
+    "chat-header": "&6&m-------&r &eHDV &7- {onglet} &8({page}/{pages}) &6&m-------",
+    "chat-empty": "&7Rien à afficher.",
+    "chat-acheter": "&8» &f{objet} x{quantite} &8- &e{prix} &8- &7{vendeur} &8(&aclic : acheter&8)",
+    "chat-retirer": "&8» &f{objet} x{quantite} &8- &e{prix} &8(&cclic : retirer&8)",
+    "chat-recuperer": "&8» &f{objet} x{quantite} &8- &7{prix} &8(&aclic : récupérer&8)",
+    "chat-footer": "&7Page suivante : &f/{label} view {onglet} {suivante}",
+    "tab-history": "Mon historique",
+    "title-all": "&6Toutes les ventes",
+    "title-money": "&eVentes en dollars",
+    "title-points": "&bVentes en points boutique",
+    "title-mine": "&6Mes ventes",
+    "title-claims": "&6À récupérer",
+    "title-history": "&6Mon historique",
+    "title-search": " &7« &f{recherche}&7 »",
+    "empty-all": "&7Aucune vente pour le moment.",
+    "empty-money": "&7Aucune vente en dollars pour le moment.",
+    "empty-points": "&7Aucune vente en points pour le moment.",
+    "empty-mine": "&7Aucune vente en cours. Mettez en vente avec &e/hdv sell <prix>&7.",
+    "empty-claims": "&7Rien à récupérer.",
+    "empty-history": "&7Aucun achat ni aucune vente pour le moment.",
+    "empty-search": "&7Aucun objet ne correspond à la recherche.",
+    "line-seller": "par {vendeur}",
+    "line-own": "expire dans {temps}",
+    "line-claim": "cliquez pour récupérer",
+    "line-sold": "vendu à {autre}",
+    "line-bought": "acheté à {autre}",
+    "tooltip-aucune": "",
+    "chat-aucune": "&8» &f{objet} x{quantite} &8- {prix} &8- &7{ligne}",
+    "tooltip-listed": "&7Mis en vente le &f{date}",
+    "tooltip-sold": "&7Vendu le &f{date} &7à &f{autre}",
+    "tooltip-bought": "&7Acheté le &f{date} &7à &f{autre}",
+    "tooltip-claim-date": "&7Depuis le &f{date}",
+    "line-or-points": "&7ou &b{points}",
+    "tooltip-acheter_double": "&eClic : acheter (en $ ou en points)",
+    "sell-item": "&f{objet} &7x{quantite}",
+    "buy-seller": "&7Vendu par &f{vendeur} &8- &7expire dans &f{temps}",
+    "buy-refused": "&8Non accepté",
+    "hover": {
+      "title": "&b{objet}",
+      "price-dollars": "<img:koriamc:textures/gui/money_koria.png> &7Prix: {prix}",
+      "price-points": "<img:koriamc:textures/gui/ruby_pbs.png> &7Prix: {prix}",
+      "seller": "<head:{vendeur}> &7Vendu par &b{vendeur}",
+      "expire": "<item:minecraft:clock> &7Expire dans &b{=clock(countdown({expire}))}",
+      "claim": "<item:minecraft:chest> &7{raison} &8· &7depuis le &f{date}",
+      "sold": "<item:minecraft:gold_ingot> &7Vendu à &b{autre} &7le &f{date}",
+      "bought": "<item:minecraft:gold_ingot> &7Acheté à &b{autre} &7le &f{date}"
+    }
+  },
+  "values": {
+    "yes-text": "&aOui",
+    "no-text": "&cNon",
+    "money-format": "{montant} $",
+    "points-format": "{montant} PB",
+    "currency-money": "dollars",
+    "currency-points": "points boutique",
+    "reason-expired": "&7Expirée",
+    "reason-cancelled": "&7Retirée",
+    "reason-removed": "&cRetirée par un admin",
+    "price-or": "{dollars} &7ou&f {points}",
+    "money-compact": "{montant}$",
+    "points-compact": "{montant} PB"
+  },
+  "time": {
+    "days": "j",
+    "hours": "h",
+    "minutes": "min",
+    "seconds": "s",
+    "now": "maintenant",
+    "never": "jamais"
+  },
+  "config-editor": {
+    "cancel-word": "annuler",
+    "empty-word": "vide",
+    "prompt": "{prefix}&eÉcrivez la nouvelle valeur de &f{path} &edans le chat (&f{empty} &epour une valeur vide, &f{cancel} &epour annuler).",
+    "prompt-current": "&7Valeur actuelle : &f",
+    "prompt-list-add": "{prefix}&eÉcrivez la valeur à ajouter à &f{path} &e(&f{cancel} &epour annuler).",
+    "prompt-list-replace": "{prefix}&eÉcrivez toutes les valeurs de &f{path}&e, séparées par des virgules (&f{cancel} &epour annuler).",
+    "prompt-add": "{prefix}&eÉcrivez le nom de la nouvelle entrée de &f{path} &e(&f{cancel} &epour annuler).",
+    "cancelled": "{prefix}&7Modification annulée.",
+    "saved": "{prefix}&a{file} : &f{path} &a= &f{value}",
+    "reset": "{prefix}&a{file} : &f{path} &areprend sa valeur par défaut.",
+    "removed": "{prefix}&a{file} : &f{path} &asupprimé.",
+    "added": "{prefix}&a{file} : &f{path} &aajouté.",
+    "confirm-remove": "{prefix}&eRefaites Ctrl + Q dans les 5 secondes pour confirmer (&f{path}&e).",
+    "invalid-number": "{prefix}&c« {input} » n'est pas un nombre.",
+    "invalid-key": "{prefix}&cNom invalide : lettres, chiffres, - _ et : uniquement.",
+    "exists": "{prefix}&cL'entrée &f{key} &cexiste déjà.",
+    "empty-section": "{prefix}&cSection vide : ajoutez la première entrée dans le fichier.",
+    "save-error": "{prefix}&cImpossible d'enregistrer {file} : {error}",
+    "restart": "{prefix}&eCe réglage sera appliqué au prochain redémarrage du serveur.",
+    "unknown-file": "{prefix}&cFichier inconnu : &f{file}&c. Fichiers : config, messages, menus."
+  },
+  "toast": {
+    "categorie": "&7Hôtel des ventes",
+    "erreur": {
+      "categorie": "&cHôtel des ventes"
+    },
+    "info": {
+      "categorie": "&7Hôtel des ventes"
+    },
+    "vente": {
+      "categorie": "&aObjet vendu",
+      "titre": "&f{objet} &7x{quantite}",
+      "sous-titre": "&a+{net} &7· acheté par &f{acheteur}"
+    },
+    "achat": {
+      "categorie": "&bAchat effectué",
+      "titre": "&f{objet} &7x{quantite}",
+      "sous-titre": "&c-{prix} &7· vendu par &f{vendeur}"
+    },
+    "mise-en-vente": {
+      "categorie": "&eMis en vente",
+      "titre": "&f{objet} &7x{quantite}",
+      "sous-titre": "&f{prix}{taxe}",
+      "taxe": " &7· taxe &c-{taxe}"
+    },
+    "retrait": {
+      "categorie": "&6Vente retirée",
+      "titre": "&f{objet}",
+      "sous-titre": "&7À récupérer dans Mes ventes"
+    },
+    "retrait-admin": {
+      "categorie": "&cVente retirée par un admin",
+      "titre": "&f{objet}",
+      "sous-titre": "&7À récupérer dans Mes ventes"
+    },
+    "expiration": {
+      "categorie": "&6Vente expirée",
+      "titre": "&f{objet}",
+      "sous-titre": "&7À récupérer dans Mes ventes"
+    },
+    "recuperation": {
+      "categorie": "&aObjet récupéré",
+      "titre": "&f{nombre} objet(s)",
+      "sous-titre": "&7Ajouté(s) à votre inventaire"
+    },
+    "taxe-remboursee": {
+      "categorie": "&aTaxe remboursée",
+      "titre": "&a+{taxe}",
+      "sous-titre": "&7Taxe de mise en vente"
+    },
+    "gains": {
+      "categorie": "&aGains versés",
+      "titre": "&a+{net}",
+      "sous-titre": "&7Ventes payées pendant votre absence"
+    },
+    "absence": {
+      "categorie": "&aPendant votre absence",
+      "titre": "&f{nombre} vente(s)",
+      "sous-titre": "&7Détails dans Mon historique"
+    },
+    "rappel": {
+      "categorie": "&eHôtel des ventes",
+      "titre": "&f{nombre} objet(s) à récupérer",
+      "sous-titre": "&7Dans Mes ventes"
+    }
+  }
+}

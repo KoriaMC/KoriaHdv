@@ -1,0 +1,148 @@
+{
+  "debug": false,
+  "commande": {
+    "nom": "hdv",
+    "alias": [
+      "ah",
+      "auction",
+      "auctionhouse"
+    ],
+    "description": "Hôtel des ventes"
+  },
+  "commandes": {
+    "help": {
+      "actif": true,
+      "alias": [
+        "?"
+      ],
+      "permission": ""
+    },
+    "menu": {
+      "actif": true,
+      "alias": [
+        "gui",
+        "open"
+      ],
+      "permission": "koriahdv.player.use"
+    },
+    "view": {
+      "actif": true,
+      "alias": [],
+      "permission": "koriahdv.player.use"
+    },
+    "search": {
+      "actif": true,
+      "alias": [
+        "find"
+      ],
+      "permission": "koriahdv.player.use"
+    },
+    "back": {
+      "actif": true,
+      "alias": [],
+      "permission": "koriahdv.player.use"
+    },
+    "sell": {
+      "actif": true,
+      "alias": [
+        "s"
+      ],
+      "permission": "koriahdv.player.sell"
+    },
+    "buy": {
+      "actif": true,
+      "alias": [],
+      "permission": "koriahdv.player.buy"
+    },
+    "cancel": {
+      "actif": true,
+      "alias": [
+        "remove"
+      ],
+      "permission": "koriahdv.player.sell"
+    },
+    "claim": {
+      "actif": true,
+      "alias": [
+        "collect"
+      ],
+      "permission": "koriahdv.player.use"
+    },
+    "config": {
+      "actif": true,
+      "alias": [
+        "configuration",
+        "cfg"
+      ],
+      "permission": "koriahdv.admin.config"
+    },
+    "reload": {
+      "actif": true,
+      "alias": [
+        "rl"
+      ],
+      "permission": "koriahdv.admin.reload"
+    }
+  },
+  "taxe": {
+    "dollars": 10,
+    "points": 10,
+    "rembourser-si-annule": false,
+    "rembourser-a-expiration": true
+  },
+  "ventes": {
+    "max-par-joueur": 10,
+    "expiration-heures": 8,
+    "monnaie-par-defaut": "money",
+    "prix": {
+      "dollars-min": 1,
+      "dollars-max": 100000000,
+      "points-min": 1,
+      "points-max": 1000000
+    },
+    "objets-interdits": [
+      "BEDROCK",
+      "BARRIER",
+      "COMMAND",
+      "MOB_SPAWNER",
+      "MONSTER_EGG"
+    ],
+    "historique-max": 50
+  },
+  "points-boutique": {
+    "mode": "AUTO",
+    "placeholder": "%azlink_money%",
+    "commande-ajouter": "azlink money add {player} {amount}",
+    "commande-retirer": "azlink money remove {player} {amount}",
+    "variable": "points",
+    "decimales": 0
+  },
+  "notifications": {
+    "layout": "hdv_notification",
+    "duree-ms": 4000
+  },
+  "menu": {
+    "layout": "hdv",
+    "installer-layout": true,
+    "inventaire": "pvirtual:koriahdv",
+    "inventaire-infobulle": "pvirtual:koriahdvinfo",
+    "layout-vente": "hdv_vente",
+    "apres-vente": "precedent",
+    "layout-achat": "hdv_achat",
+    "inventaire-vente": "pvirtual:koriahdvvente:9",
+    "objets-max": 54
+  },
+  "titres": {
+    "apparition": 5,
+    "duree": 40,
+    "disparition": 10
+  },
+  "sons": {
+    "mise-en-vente": "LEVEL_UP:0.6:1.6",
+    "achat": "ORB_PICKUP:0.8:1",
+    "vendu": "NOTE_PLING:0.8:1.6",
+    "recuperation": "ITEM_PICKUP:0.8:1",
+    "refus": "VILLAGER_NO",
+    "clic-menu": "CLICK:0.5:1"
+  }
+}

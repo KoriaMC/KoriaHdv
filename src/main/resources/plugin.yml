@@ -1,0 +1,28 @@
+name: KoriaHdv
+version: ${project.version}
+main: fr.koriamc.hdv.KoriaHdv
+author: KoriaMC
+description: ${project.description}
+softdepend: [Vault, PlaceholderAPI, AzLink]
+
+# La commande principale (/hdv par défaut) et ses alias sont enregistrés dynamiquement
+# depuis config.json : ils ne sont donc pas déclarés ici.
+
+permissions:
+  koriahdv.*:
+    description: Accès complet à KoriaHdv
+    default: op
+    children:
+      koriahdv.player: true
+      koriahdv.admin: true
+  koriahdv.player:
+    description: Commandes joueur (les nœuds exacts sont définis dans config.json)
+    default: true
+  koriahdv.admin:
+    description: Commandes d'administration (les nœuds exacts sont définis dans config.json)
+    default: op
+    children:
+      koriahdv.admin.cancel: true
+  koriahdv.admin.cancel:
+    description: Retirer la vente d'un autre joueur (l'objet lui est rendu)
+    default: op
