@@ -2,7 +2,7 @@ name: KoriaHdv
 version: ${project.version}
 main: fr.koriamc.hdv.KoriaHdv
 author: KoriaMC
-description: ${project.description}
+description: "${project.description}"
 softdepend: [Vault, PlaceholderAPI, AzLink]
 
 # La commande principale (/hdv par défaut) et ses alias sont enregistrés dynamiquement
